@@ -25,6 +25,7 @@ export default async function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} h-full antialiased${isDark ? " dark" : ""}`}
+      style={{ "--font-display": "Season Mix-TRIAL, Georgia, serif" } as React.CSSProperties}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">{children}</body>
