@@ -1,26 +1,343 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Tailwind theme ──────────────────────────────────────────────────── */
+@theme {
+  /* Fonts */
+  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Season Mix-TRIAL", Georgia, serif;
+
+  /* ── Semantic colors (light defaults, overridden in .dark) ─── */
+
+  /* Foreground */
+  --color-ink:            #281e15;
+  --color-ink-secondary:  #52402f;
+  --color-ink-muted:      #a8917a;
+  --color-ink-on-primary: #ecece2;
+  --color-ink-on-dark:    #ecece2;
+  --color-ink-inverse:    #ffffff;
+
+  /* Background */
+  --color-surface:         #faf8f6;
+  --color-surface-2:       #f0ebe5;
+  --color-surface-3:       #ddd4c8;
+  --color-surface-muted:   #f5f5ee;
+  --color-surface-inverse: #17110c;
+  --color-surface-glass:   rgba(40,30,21,0.32);
+
+  /* Border */
+  --color-stroke:       #ddd4c8;
+  --color-stroke-strong:#c4b5a3;
+  --color-stroke-muted: #a8917a;
+  --color-stroke-glass: rgba(40,30,21,0.32);
+
+  /* Button */
+  --color-btn-primary-bg:  #281e15;
+  --color-btn-primary-fg:  #ecece2;
+  --color-btn-ghost-bg:    #f0ebe5;
+  --color-btn-ghost-fg:    #281e15;
+  --color-btn-glass-bg:    rgba(40,30,21,0.32);
+  --color-btn-success-bg:  #618a35;
+  --color-btn-success-fg:  #ffffff;
+  --color-btn-warning-bg:  #c07418;
+  --color-btn-warning-fg:  #ffffff;
+
+  /* Nav */
+  --color-nav-bg:     rgba(40,30,21,0.32);
+  --color-nav-text:   #281e15;
+  --color-nav-border: rgba(40,30,21,0.32);
+
+  /* Brand */
+  --color-brand:          #9e542f;
+  --color-brand-hover:    #874828;
+  --color-brand-subtle:   #fae8dc;
+  --color-brand-muted:    #f3ccb3;
+  --color-brand-emphasis: #6e3a20;
+  --color-brand-on:       #ffffff;
+
+  /* ── Primitive palettes (static) ─── */
+
+  /* Brown */
+  --color-brown-50:  #faf8f6;
+  --color-brown-100: #f0ebe5;
+  --color-brown-200: #ddd4c8;
+  --color-brown-300: #c4b5a3;
+  --color-brown-400: #a8917a;
+  --color-brown-500: #8d7259;
+  --color-brown-600: #6e5640;
+  --color-brown-700: #52402f;
+  --color-brown-800: #3a2d21;
+  --color-brown-900: #281e15;
+  --color-brown-950: #17110c;
+
+  /* Sand */
+  --color-sand-50:  #fafaf7;
+  --color-sand-100: #f5f5ee;
+  --color-sand-200: #ecece2;
+  --color-sand-300: #ddddd0;
+  --color-sand-400: #c4c4b3;
+  --color-sand-500: #a8a894;
+  --color-sand-600: #8a8a74;
+  --color-sand-700: #6b6b58;
+  --color-sand-800: #4f4f40;
+  --color-sand-900: #36362b;
+  --color-sand-950: #1f1f18;
+
+  /* Bronze */
+  --color-bronze-50:  #fdf5f0;
+  --color-bronze-100: #fae8dc;
+  --color-bronze-200: #f3ccb3;
+  --color-bronze-300: #e9a97f;
+  --color-bronze-400: #d6804e;
+  --color-bronze-500: #9e542f;
+  --color-bronze-600: #874828;
+  --color-bronze-700: #6e3a20;
+  --color-bronze-800: #552d19;
+  --color-bronze-900: #3f2113;
+  --color-bronze-950: #2a150c;
+
+  /* Green */
+  --color-green-50:  #f2f5ec;
+  --color-green-100: #e2ebd4;
+  --color-green-200: #c4d8ab;
+  --color-green-300: #a0c07e;
+  --color-green-400: #7fa655;
+  --color-green-500: #618a35;
+  --color-green-600: #4d6f29;
+  --color-green-700: #3a551e;
+  --color-green-800: #293c15;
+  --color-green-900: #1b290e;
+  --color-green-950: #0f1707;
+
+  /* Red */
+  --color-red-50:  #f8f0ee;
+  --color-red-100: #f0ddd9;
+  --color-red-200: #e1bab3;
+  --color-red-300: #ce9389;
+  --color-red-400: #b86961;
+  --color-red-500: #9e413a;
+  --color-red-600: #7e3230;
+  --color-red-700: #5f2524;
+  --color-red-800: #431a19;
+  --color-red-900: #2c110f;
+  --color-red-950: #190908;
+
+  /* Orange */
+  --color-orange-50:  #fdf6e8;
+  --color-orange-100: #faebcc;
+  --color-orange-200: #f5d49e;
+  --color-orange-300: #edb868;
+  --color-orange-400: #e09635;
+  --color-orange-500: #c07418;
+  --color-orange-600: #9a5d12;
+  --color-orange-700: #75470d;
+  --color-orange-800: #533209;
+  --color-orange-900: #362006;
+  --color-orange-950: #1e1203;
+
+  /* Neutral */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Alpha - Brown */
+  --color-brown-a4:  rgba(40,30,21,0.04);
+  --color-brown-a8:  rgba(40,30,21,0.08);
+  --color-brown-a12: rgba(40,30,21,0.12);
+  --color-brown-a16: rgba(40,30,21,0.16);
+  --color-brown-a24: rgba(40,30,21,0.24);
+  --color-brown-a32: rgba(40,30,21,0.32);
+  --color-brown-a48: rgba(40,30,21,0.48);
+  --color-brown-a64: rgba(40,30,21,0.64);
+  --color-brown-a72: rgba(40,30,21,0.72);
+  --color-brown-a80: rgba(40,30,21,0.80);
+
+  /* Alpha - Sand */
+  --color-sand-a4:  rgba(236,236,226,0.04);
+  --color-sand-a8:  rgba(236,236,226,0.08);
+  --color-sand-a12: rgba(236,236,226,0.12);
+  --color-sand-a16: rgba(236,236,226,0.16);
+  --color-sand-a24: rgba(236,236,226,0.24);
+  --color-sand-a32: rgba(236,236,226,0.32);
+  --color-sand-a48: rgba(236,236,226,0.48);
+  --color-sand-a64: rgba(236,236,226,0.64);
+  --color-sand-a72: rgba(236,236,226,0.72);
+  --color-sand-a80: rgba(236,236,226,0.80);
+
+  /* Alpha - White */
+  --color-white-a4:  rgba(255,255,255,0.04);
+  --color-white-a8:  rgba(255,255,255,0.08);
+  --color-white-a12: rgba(255,255,255,0.12);
+  --color-white-a16: rgba(255,255,255,0.16);
+  --color-white-a24: rgba(255,255,255,0.24);
+  --color-white-a32: rgba(255,255,255,0.32);
+  --color-white-a48: rgba(255,255,255,0.48);
+  --color-white-a64: rgba(255,255,255,0.64);
+  --color-white-a72: rgba(255,255,255,0.72);
+  --color-white-a80: rgba(255,255,255,0.80);
+
+  /* Alpha - Black */
+  --color-black-a4:  rgba(0,0,0,0.04);
+  --color-black-a8:  rgba(0,0,0,0.08);
+  --color-black-a12: rgba(0,0,0,0.12);
+  --color-black-a16: rgba(0,0,0,0.16);
+  --color-black-a24: rgba(0,0,0,0.24);
+  --color-black-a32: rgba(0,0,0,0.32);
+  --color-black-a48: rgba(0,0,0,0.48);
+  --color-black-a64: rgba(0,0,0,0.64);
+  --color-black-a72: rgba(0,0,0,0.72);
+  --color-black-a80: rgba(0,0,0,0.80);
+
+  /* Alpha - Bronze */
+  --color-bronze-a4:  rgba(158,84,47,0.04);
+  --color-bronze-a8:  rgba(158,84,47,0.08);
+  --color-bronze-a12: rgba(158,84,47,0.12);
+  --color-bronze-a16: rgba(158,84,47,0.16);
+  --color-bronze-a24: rgba(158,84,47,0.24);
+  --color-bronze-a32: rgba(158,84,47,0.32);
+  --color-bronze-a48: rgba(158,84,47,0.48);
+  --color-bronze-a64: rgba(158,84,47,0.64);
+  --color-bronze-a72: rgba(158,84,47,0.72);
+  --color-bronze-a80: rgba(158,84,47,0.80);
+
+  /* ── Primitive spacing (px values) ─── */
+  --spacing-px:  1px;
+  --spacing-05:  2px;
+  --spacing-1:   4px;
+  --spacing-15:  6px;
+  --spacing-2:   8px;
+  --spacing-25:  10px;
+  --spacing-3:   12px;
+  --spacing-35:  14px;
+  --spacing-4:   16px;
+  --spacing-5:   20px;
+  --spacing-6:   24px;
+  --spacing-7:   28px;
+  --spacing-8:   32px;
+  --spacing-9:   36px;
+  --spacing-10:  40px;
+  --spacing-11:  44px;
+  --spacing-12:  48px;
+  --spacing-14:  56px;
+  --spacing-16:  64px;
+  --spacing-20:  80px;
+  --spacing-24:  96px;
+  --spacing-28:  112px;
+  --spacing-32:  128px;
+  --spacing-36:  144px;
+  --spacing-40:  160px;
+  --spacing-44:  176px;
+  --spacing-48:  192px;
+  --spacing-52:  208px;
+  --spacing-56:  224px;
+  --spacing-60:  240px;
+  --spacing-64:  256px;
+  --spacing-72:  288px;
+  --spacing-80:  320px;
+  --spacing-96:  384px;
+
+  /* ── Radius ─── */
+  --radius-none:    0px;
+  --radius-sm:      2px;
+  --radius-default: 4px;
+  --radius-md:      6px;
+  --radius-lg:      8px;
+  --radius-xl:      12px;
+  --radius-2xl:     16px;
+  --radius-3xl:     24px;
+  --radius-full:    9999px;
+
+  /* Semantic radius aliases */
+  --radius-input:  8px;
+  --radius-card:   12px;
+  --radius-button: 8px;
+  --radius-pill:   9999px;
+
+  /* ── Font sizes ─── */
+  --text-xs:   10px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  30px;
+  --text-4xl:  36px;
+  --text-5xl:  48px;
+  --text-6xl:  60px;
+  --text-7xl:  72px;
+  --text-8xl:  96px;
+  --text-9xl:  116px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dark mode overrides ─────────────────────────────────────────────── */
+.dark {
+  /* Foreground */
+  --color-ink:            #ecece2;
+  --color-ink-secondary:  rgba(236,236,226,0.72);
+  --color-ink-muted:      rgba(255,255,255,0.48);
+  --color-ink-on-primary: #281e15;
+  --color-ink-inverse:    #17110c;
+
+  /* Background */
+  --color-surface:         #281e15;
+  --color-surface-2:       #3a2d21;
+  --color-surface-3:       #17110c;
+  --color-surface-muted:   #52402f;
+  --color-surface-inverse: #fafaf7;
+  --color-surface-glass:   rgba(236,236,226,0.04);
+
+  /* Border */
+  --color-stroke:       #ddddd0;
+  --color-stroke-strong:rgba(255,255,255,0.08);
+  --color-stroke-muted: #c4c4b3;
+  --color-stroke-glass: rgba(236,236,226,0.04);
+
+  /* Button */
+  --color-btn-primary-bg: #ecece2;
+  --color-btn-primary-fg: #281e15;
+  --color-btn-ghost-bg:   #3a2d21;
+  --color-btn-ghost-fg:   #ffffff;
+  --color-btn-glass-bg:   rgba(236,236,226,0.04);
+  --color-btn-success-bg: #7fa655;
+  --color-btn-warning-bg: #e09635;
+
+  /* Nav */
+  --color-nav-bg:     rgba(236,236,226,0.04);
+  --color-nav-text:   #ffffff;
+  --color-nav-border: rgba(236,236,226,0.04);
+
+  /* Brand */
+  --color-brand:          #9e542f;
+  --color-brand-hover:    #d6804e;
+  --color-brand-subtle:   #3f2113;
+  --color-brand-muted:    #552d19;
+  --color-brand-emphasis: #e9a97f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Component utilities ─────────────────────────────────────────────── */
+.btn-magic {
+  background: linear-gradient(
+    90deg,
+    #281e15 0%,
+    #281e15 30%,
+    #874828 42%,
+    #e9a97f 50%,
+    #874828 58%,
+    #281e15 70%,
+    #281e15 100%
+  );
+  background-size: 300% 100%;
+  background-position: 150% 0;
+  animation: magic-flash 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@keyframes magic-flash {
+  0%   { background-position: 150% 0; }
+  35%  { background-position: -150% 0; }
+  100% { background-position: -150% 0; }
+}
+
+/* ── Base ────────────────────────────────────────────────────────────── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-ink);
 }
