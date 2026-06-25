@@ -3,9 +3,8 @@
 
 /* ── Season Mix font ──────────────────────────────────────────────────── */
 @font-face {
-  font-family: "Season Mix-TRIAL";
-  src: url("/fonts/season-mix-trial-regular.woff2") format("woff2"),
-       url("/fonts/season-mix-trial-regular.woff") format("woff");
+  font-family: "Season Mix";
+  src: url("/fonts/SeasonMix-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -15,7 +14,7 @@
 @theme {
   /* Fonts */
   --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Season Mix-TRIAL", Georgia, serif;
+  --font-display: "Season Mix", Georgia, serif;
 
   /* ── Semantic colors (light defaults, overridden in .dark) ─── */
 
@@ -296,10 +295,10 @@
   --color-surface-glass:   rgba(236,236,226,0.04);
 
   /* Border */
-  --color-stroke:       #ddddd0;
-  --color-stroke-strong:rgba(255,255,255,0.08);
-  --color-stroke-muted: #c4c4b3;
-  --color-stroke-glass: rgba(236,236,226,0.04);
+  --color-stroke:       rgba(255,255,255,0.10);
+  --color-stroke-strong:rgba(255,255,255,0.16);
+  --color-stroke-muted: rgba(255,255,255,0.08);
+  --color-stroke-glass: rgba(236,236,226,0.06);
 
   /* Button */
   --color-btn-primary-bg: #ecece2;

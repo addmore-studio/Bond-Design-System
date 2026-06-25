@@ -41,7 +41,7 @@ export function Sheet({
       <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={onClose} />
       <div
         className={cn(
-          "relative flex flex-col bg-surface border border-stroke h-full",
+          "relative flex flex-col bg-surface border border-stroke h-full max-w-full",
           side === "right" ? "ml-auto rounded-l-card" : "mr-auto rounded-r-card",
           className
         )}

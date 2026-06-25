@@ -24,20 +24,20 @@ export function SettingsLayoutDemo() {
           footer={<><Button variant="outline">Cancel</Button><Button>Save changes</Button></>}
         >
           <SettingsRow label="Full name" description="Shown on your public profile">
-            <Input placeholder="Jane Smith" className="w-48" />
+            <Input placeholder="Jane Smith" className="w-full sm:w-48" />
           </SettingsRow>
           <SettingsRow label="Email" description="Used for login and notifications">
-            <Input placeholder="jane@company.com" className="w-48" />
+            <Input placeholder="jane@company.com" className="w-full sm:w-48" />
           </SettingsRow>
         </SettingsSectionCard>
       )}
       {active === "security" && (
         <SettingsSectionCard title="Security" description="Manage your password and 2FA." footer={<Button>Save changes</Button>}>
           <SettingsRow label="Current password">
-            <Input type="password" placeholder="••••••••" className="w-48" />
+            <Input type="password" placeholder="••••••••" className="w-full sm:w-48" />
           </SettingsRow>
           <SettingsRow label="New password">
-            <Input type="password" placeholder="••••••••" className="w-48" />
+            <Input type="password" placeholder="••••••••" className="w-full sm:w-48" />
           </SettingsRow>
         </SettingsSectionCard>
       )}

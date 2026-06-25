@@ -130,7 +130,7 @@ export default function EasingPage() {
     <div>
       <div className="mb-10">
         <h1
-          className="text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2"
+          className="text-[24px] sm:text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Easing

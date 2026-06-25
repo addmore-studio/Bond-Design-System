@@ -61,7 +61,7 @@ export function ComponentPreview({
       </div>
 
       {tab === "preview" ? (
-        <div className="flex min-h-32 items-center justify-center p-10 bg-surface dark:bg-surface-2 rounded-b-card">
+        <div className="flex min-h-32 items-center justify-center p-5 sm:p-10 bg-surface dark:bg-surface-2 rounded-b-card">
           {component}
         </div>
       ) : (

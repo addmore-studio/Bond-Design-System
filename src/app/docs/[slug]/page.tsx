@@ -39,7 +39,7 @@ export default async function ComponentPage({
 
       <div className="flex-1 min-w-0">
         <div className="mb-8">
-          <h1 className="text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2" style={{ fontFamily: "var(--font-display)" }}>
+          <h1 className="text-[24px] sm:text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2" style={{ fontFamily: "var(--font-display)" }}>
             {entry.name}
           </h1>
           <p className="text-ink-muted text-[13px]">{entry.description}</p>

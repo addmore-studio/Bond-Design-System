@@ -9,7 +9,7 @@ export default function DocsPage() {
     <div>
       <div className="mb-10">
         <h1
-          className="text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-3"
+          className="text-[24px] sm:text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-3"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Bond UI Kit
@@ -24,7 +24,7 @@ export default function DocsPage() {
       <div className="space-y-8">
         {Object.entries(categories).map(([category, entries]) => (
           <div key={category}>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {entries.map((entry) => (
                 <Link
                   key={entry.slug}

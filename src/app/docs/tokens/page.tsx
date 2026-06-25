@@ -356,7 +356,7 @@ const typographyTokens = [
   {
     name: "Heading/H5",
     specs: [
-      { label: "family", value: "Season Mix-TRIAL" },
+      { label: "family", value: "Season Mix" },
       { label: "size",   value: "32px" },
       { label: "weight", value: "420" },
       { label: "lh",     value: "1.4" },
@@ -368,7 +368,7 @@ const typographyTokens = [
   {
     name: "Heading/Display",
     specs: [
-      { label: "family", value: "Season Mix-TRIAL" },
+      { label: "family", value: "Season Mix" },
       { label: "size",   value: "116px" },
       { label: "weight", value: "420" },
       { label: "lh",     value: "1" },
@@ -550,7 +550,7 @@ export default function TokensPage() {
     <div>
       <div className="mb-10">
         <h1
-          className="text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2"
+          className="text-[24px] sm:text-[32px] font-[420] leading-[1.4] tracking-[-0.03em] text-ink mb-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Tokens
@@ -636,7 +636,7 @@ export default function TokensPage() {
         <div className="space-y-2">
           {fontSizeTokens.map(({ name, cssVar, value, px }) => (
             <div key={name} className="rounded-card border border-stroke overflow-hidden flex items-stretch">
-              <div className="w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center justify-center p-3 overflow-hidden">
+              <div className="w-16 sm:w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center justify-center p-2 sm:p-3 overflow-hidden">
                 <span
                   className="text-ink font-medium leading-none truncate"
                   style={{ fontSize: `${Math.min(px, 36)}px` }}
@@ -644,7 +644,7 @@ export default function TokensPage() {
                   Aa
                 </span>
               </div>
-              <div className="flex-1 p-3 bg-surface grid grid-cols-3 gap-x-4 items-center">
+              <div className="flex-1 p-2 sm:p-3 bg-surface grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-0.5 items-center">
                 <CopyRow value={name} />
                 <CopyRow value={cssVar} accent={true} />
                 <span className="font-sans text-[11px] text-ink-muted">{value}</span>
@@ -660,13 +660,13 @@ export default function TokensPage() {
         <div className="space-y-1.5">
           {spacingTokens.map(({ name, cssVar, value, px }) => (
             <div key={name} className="rounded-lg border border-stroke overflow-hidden flex items-stretch">
-              <div className="w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center px-3 py-2.5">
+              <div className="w-16 sm:w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center px-2 sm:px-3 py-2.5">
                 <div
                   className="bg-bronze-400 rounded-sm shrink-0"
                   style={{ width: `${Math.min(px * 0.5, 96)}px`, height: "8px" }}
                 />
               </div>
-              <div className="flex-1 p-2.5 bg-surface grid grid-cols-3 gap-x-4 items-center">
+              <div className="flex-1 p-2 sm:p-2.5 bg-surface grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-0.5 items-center">
                 <CopyRow value={name} />
                 <CopyRow value={cssVar} accent={true} />
                 <span className="font-sans text-[11px] text-ink-muted">{value}</span>
@@ -682,13 +682,13 @@ export default function TokensPage() {
         <div className="space-y-1.5">
           {radiusTokens.map(({ name, cssVar, value, px }) => (
             <div key={name} className="rounded-lg border border-stroke overflow-hidden flex items-stretch">
-              <div className="w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center justify-center p-3">
+              <div className="w-16 sm:w-32 shrink-0 bg-surface-2 border-r border-stroke flex items-center justify-center p-2 sm:p-3">
                 <div
                   className="w-8 h-8 border-2 border-bronze-400 bg-bronze-100 shrink-0"
                   style={{ borderRadius: `${Math.min(px, 16)}px` }}
                 />
               </div>
-              <div className="flex-1 p-2.5 bg-surface grid grid-cols-3 gap-x-4 items-center">
+              <div className="flex-1 p-2 sm:p-2.5 bg-surface grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-0.5 items-center">
                 <CopyRow value={name} />
                 <CopyRow value={cssVar} accent={true} />
                 <span className="font-sans text-[11px] text-ink-muted">{value}</span>
@@ -704,7 +704,7 @@ export default function TokensPage() {
         <div className="rounded-card border border-stroke overflow-hidden divide-y divide-stroke">
           {layoutTokens.map(({ name, value, alias }) => (
             <div key={name} className="flex items-center px-4 py-2.5 bg-surface hover:bg-surface-2 transition-colors group">
-              <div className="flex-1 grid grid-cols-3 gap-x-4 items-center">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-0.5 items-center">
                 <CopyRow value={name} />
                 <span className="font-sans text-[11px] text-bronze-500">{value}</span>
                 <span className="font-sans text-[11px] text-ink-muted/60">{alias}</span>

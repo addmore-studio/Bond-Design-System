@@ -55,7 +55,7 @@ interface MemberRowProps {
 
 function MemberRow({ member, onRoleChange, onRemove }: MemberRowProps) {
   return (
-    <div className="flex items-center gap-3 px-4 py-3">
+    <div className="flex flex-wrap items-center gap-3 px-3 sm:px-4 py-3">
       <Avatar fallback={member.name.slice(0, 2)} src={member.avatarUrl} size="sm" />
       <div className="flex-1 min-w-0">
         <p className="text-[13px] font-[500] text-ink truncate">{member.name}</p>

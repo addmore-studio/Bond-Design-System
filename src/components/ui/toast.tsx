@@ -33,7 +33,7 @@ const variantConfig: Record<ToastVariant, { icon: React.ReactNode; iconClass: st
 export function Toast({ toast, onDismiss }: { toast: ToastData; onDismiss?: (id: string) => void }) {
   const cfg = variantConfig[toast.variant ?? "default"];
   return (
-    <div className="flex items-start gap-2.5 rounded-card border border-stroke bg-surface shadow-lg px-3.5 py-3 w-[320px] pointer-events-auto">
+    <div className="flex items-start gap-2.5 rounded-card border border-stroke bg-surface shadow-lg px-3.5 py-3 w-full sm:w-[320px] pointer-events-auto">
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1.5">
           {cfg.icon && (
@@ -81,7 +81,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext.Provider value={{ toast, dismiss }}>
       {children}
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none">
+      <div className="fixed bottom-4 left-4 right-4 sm:left-auto z-50 flex flex-col gap-2 pointer-events-none">
         {toasts.map((t) => (
           <ToastItem key={t.id} toast={t} onRemove={dismiss} />
         ))}

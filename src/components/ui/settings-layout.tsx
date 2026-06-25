@@ -24,9 +24,9 @@ export function SettingsLayout({
   className,
 }: SettingsLayoutProps) {
   return (
-    <div className={cn("flex gap-6 w-full", className)}>
+    <div className={cn("flex flex-col sm:flex-row gap-4 sm:gap-6 w-full", className)}>
       {/* Sidebar nav */}
-      <nav className="shrink-0 w-44 flex flex-col gap-0.5">
+      <nav className="shrink-0 sm:w-44 flex flex-row sm:flex-col gap-1 sm:gap-0.5 overflow-x-auto">
         {sections.map((section) => (
           <button
             key={section.id}
@@ -94,7 +94,7 @@ export interface SettingsRowProps {
 
 export function SettingsRow({ label, description, children, className }: SettingsRowProps) {
   return (
-    <div className={cn("flex items-start gap-4 py-3 first:pt-0 last:pb-0 border-b border-stroke last:border-0", className)}>
+    <div className={cn("flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 py-3 first:pt-0 last:pb-0 border-b border-stroke last:border-0", className)}>
       <div className="flex-1 min-w-0">
         <p className="text-[13px] font-[500] text-ink">{label}</p>
         {description && (
