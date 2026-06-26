@@ -53,7 +53,7 @@ export function NavItem({
           <span className="absolute top-[18px] right-[10px] w-1.5 h-1.5 rounded-full bg-bronze-500" />
         )}
         {/* Tooltip */}
-        <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-50 whitespace-nowrap rounded-full bg-ink px-2 py-1.5 text-[11px] font-[450] leading-none tracking-[-0.02em] text-ink-on-dark opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+        <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-50 whitespace-nowrap rounded-full bg-ink px-2 py-1.5 text-[11px] font-[450] leading-none tracking-[-0.02em] text-ink-inverse opacity-0 transition-opacity duration-150 group-hover:opacity-100">
           {label}
         </span>
       </button>

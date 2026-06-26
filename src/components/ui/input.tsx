@@ -105,7 +105,7 @@ export function Input({
     "flex items-center gap-1.5 rounded-input border bg-surface px-2.5 transition-colors",
     isTextarea ? "h-auto py-2 items-start" : "h-8",
     error
-      ? "border-red-400 focus-within:border-red-500"
+      ? "border-red-400 focus-within:border-red-500 dark:border-red-800 dark:focus-within:border-red-600"
       : "border-stroke focus-within:border-stroke-strong",
     (disabled || readOnly) && "pointer-events-none opacity-50"
   );
@@ -217,7 +217,7 @@ export function Input({
         <p
           className={cn(
             "text-[12px] font-[450] leading-[1.5] tracking-[-0.02em]",
-            error ? "text-red-500" : "text-ink-muted"
+            error ? "text-red-500 dark:text-red-400" : "text-ink-muted"
           )}
         >
           {error ?? helperText}

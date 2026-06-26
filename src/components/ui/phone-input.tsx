@@ -156,7 +156,7 @@ export function PhoneInput({
   const wrapperClass = cn(
     "flex items-center rounded-input border bg-surface px-2.5 h-8 transition-colors",
     error
-      ? "border-red-400 focus-within:border-red-500"
+      ? "border-red-400 focus-within:border-red-500 dark:border-red-800 dark:focus-within:border-red-600"
       : "border-stroke focus-within:border-stroke-strong",
     (disabled || readOnly) && "pointer-events-none opacity-50"
   );
@@ -198,7 +198,7 @@ export function PhoneInput({
         <p
           className={cn(
             "text-[12px] font-[450] leading-[1.5] tracking-[-0.02em]",
-            error ? "text-red-500" : "text-ink-muted"
+            error ? "text-red-500 dark:text-red-400" : "text-ink-muted"
           )}
         >
           {error ?? helperText}

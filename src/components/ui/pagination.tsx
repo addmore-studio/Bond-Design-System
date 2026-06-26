@@ -52,7 +52,7 @@ export function Pagination({ page, total, onChange, siblings = 1, className }: P
             aria-current={p === page ? "page" : undefined}
             className={cn(
               btnBase,
-              p === page ? "bg-ink text-ink-on-dark" : "text-ink hover:bg-surface-2"
+              p === page ? "bg-ink text-ink-inverse" : "text-ink hover:bg-surface-2"
             )}
           >
             {p}

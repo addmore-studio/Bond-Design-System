@@ -17,11 +17,11 @@ export interface BadgeProps {
 }
 
 const variantClasses: Record<string, string> = {
-  bronze:  "bg-bronze-400 text-white",
+  bronze:  "bg-bronze-400 text-white dark:bg-bronze-600 dark:text-bronze-100",
   neutral: "bg-surface-3 text-ink-secondary",
-  success: "bg-green-500 text-white",
-  warning: "bg-orange-500 text-white",
-  danger:  "bg-red-500 text-white",
+  success: "bg-green-500 text-white dark:bg-green-600 dark:text-green-100",
+  warning: "bg-orange-500 text-white dark:bg-orange-600 dark:text-orange-100",
+  danger:  "bg-red-500 text-white dark:bg-red-600 dark:text-red-100",
 };
 
 export function Badge({ children, icon, variant = "bronze", className }: BadgeProps) {

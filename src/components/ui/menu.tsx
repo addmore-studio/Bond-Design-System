@@ -126,7 +126,7 @@ export function Menu({
                   className={cn(
                     "flex w-full items-center gap-2 rounded-input px-2.5 py-[7px] text-[13px] font-[450] leading-[1.5] tracking-[-0.02em] transition-colors cursor-pointer text-left",
                     item.destructive
-                      ? "text-red-500 hover:bg-red-50"
+                      ? "text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30"
                       : "text-ink hover:bg-surface-2"
                   )}
                 >

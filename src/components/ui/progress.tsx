@@ -12,10 +12,10 @@ export interface ProgressProps {
 }
 
 const fillColor: Record<string, string> = {
-  default: "bg-bronze-400",
-  success: "bg-green-500",
-  warning: "bg-orange-500",
-  danger:  "bg-red-500",
+  default: "bg-bronze-400 dark:bg-bronze-500",
+  success: "bg-green-500 dark:bg-green-400",
+  warning: "bg-orange-500 dark:bg-orange-400",
+  danger:  "bg-red-500 dark:bg-red-400",
 };
 
 export function Progress({ value, max = 100, variant = "default", size = "md", showLabel, className }: ProgressProps) {

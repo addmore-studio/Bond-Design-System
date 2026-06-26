@@ -10,7 +10,7 @@ const buttonVariants = cva(
         outline:     "border border-stroke bg-transparent text-ink hover:bg-surface-2",
         ghost:       "bg-btn-ghost-bg text-btn-ghost-fg hover:bg-surface-2",
         glass:       "bg-btn-glass-bg text-ink backdrop-blur-sm border border-stroke-glass hover:bg-btn-glass-bg/80",
-        destructive: "bg-red-500 text-white hover:bg-red-600",
+        destructive: "bg-red-500 text-white hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-500",
         success:     "bg-btn-success-bg text-btn-success-fg hover:bg-btn-success-bg/85",
         warning:     "bg-btn-warning-bg text-btn-warning-fg hover:bg-btn-warning-bg/85",
         magic:       "btn-magic text-sand-200",

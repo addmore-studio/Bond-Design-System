@@ -23,9 +23,9 @@ const ToastContext = createContext<ToastContextValue | null>(null);
 
 const variantConfig: Record<ToastVariant, { icon: React.ReactNode; iconClass: string }> = {
   default: { icon: null,                           iconClass: "" },
-  success: { icon: <RiCheckLine size={14} />,       iconClass: "text-green-500" },
-  error:   { icon: <RiErrorWarningLine size={14} />, iconClass: "text-red-500" },
-  warning: { icon: <RiAlertLine size={14} />,        iconClass: "text-orange-500" },
+  success: { icon: <RiCheckLine size={14} />,       iconClass: "text-green-500 dark:text-green-400" },
+  error:   { icon: <RiErrorWarningLine size={14} />, iconClass: "text-red-500 dark:text-red-400" },
+  warning: { icon: <RiAlertLine size={14} />,        iconClass: "text-orange-500 dark:text-orange-400" },
   info:    { icon: <RiInformationLine size={14} />,  iconClass: "text-ink-muted" },
 };
 

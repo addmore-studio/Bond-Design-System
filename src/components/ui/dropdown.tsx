@@ -199,7 +199,7 @@ export function Dropdown({
         onClick={onSelect}
         className={cn(
           "flex w-full items-center gap-2 rounded-input px-2.5 py-[7px] text-[13px] font-[450] leading-[1.5] tracking-[-0.02em] transition-colors cursor-pointer text-left",
-          isSelected ? "bg-bronze-100 text-bronze-800" : "text-ink hover:bg-surface-2"
+          isSelected ? "bg-bronze-100 text-bronze-800 dark:bg-bronze-900 dark:text-bronze-200" : "text-ink hover:bg-surface-2"
         )}
       >
         {multiple && (
@@ -225,7 +225,7 @@ export function Dropdown({
         className={cn(
           "inline-flex h-8 items-center gap-[6px] rounded-lg px-2 py-[6px] text-[13px] font-[450] leading-[1.5] tracking-[-0.02em] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           hasSelection
-            ? "bg-bronze-100 text-bronze-800 hover:bg-bronze-200"
+            ? "bg-bronze-100 text-bronze-800 hover:bg-bronze-200 dark:bg-bronze-900 dark:text-bronze-200 dark:hover:bg-bronze-800"
             : "bg-btn-ghost-bg text-ink hover:bg-surface-2"
         )}
       >

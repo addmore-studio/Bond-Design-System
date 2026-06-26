@@ -79,7 +79,7 @@ function MemberRow({ member, onRoleChange, onRemove }: MemberRowProps) {
       {onRemove && (
         <button
           onClick={onRemove}
-          className="shrink-0 text-[12px] font-[500] text-ink-muted hover:text-red-500 transition-colors px-1"
+          className="shrink-0 text-[12px] font-[500] text-ink-muted hover:text-red-500 dark:hover:text-red-400 transition-colors px-1"
         >
           Remove
         </button>

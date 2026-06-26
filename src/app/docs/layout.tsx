@@ -27,7 +27,7 @@ export default function DocsLayout({
         </aside>
 
         <main className="lg:ml-60 flex-1 min-h-[calc(100vh-3.5rem)]">
-          <div className="max-w-5xl xl:max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 py-8 lg:py-10">{children}</div>
+          <div className="max-w-5xl px-5 sm:px-8 lg:px-10 xl:pr-56 py-8 lg:py-10">{children}</div>
         </main>
       </div>
     </div>

@@ -37,7 +37,7 @@ export function StatCard({ label, value, trend, trendLabel, icon, className }: S
         <div className="flex items-center gap-1.5 bg-surface-2 px-4 py-3 rounded-b-[12px]">
           <span className={cn(
             "inline-flex items-center gap-0.5 text-[12px] font-[500] leading-none",
-            isUp ? "text-green-500" : "text-red-500"
+            isUp ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-400"
           )}>
             {isUp ? <RiArrowUpLine size={13} /> : <RiArrowDownLine size={13} />}
             {Math.abs(trend!)}%
